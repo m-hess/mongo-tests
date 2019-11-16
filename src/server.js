@@ -36,8 +36,13 @@ mongoose.Promise = global.Promise;
 
 
 // default index route
+// app.get('/', (req, res) => {
+//   res.send('hi');
+// });
 app.get('/', (req, res) => {
-  res.send('hi');
+  // we will later be able to get the polls by calling a function, but let's pass in no polls for now
+  const polls = [];
+  res.render('index', { polls });
 });
 
 // START THE SERVER

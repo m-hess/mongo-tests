@@ -7,8 +7,11 @@ import mongoose from 'mongoose';
 import * as Polls from './controllers/poll_controller';
 
 // DB Setup
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/cs52poll';
-mongoose.connect(mongoURI);
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/mongo-tests';
+mongoose.connect(mongoURI, { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 // set mongoose promises to es6 default
 mongoose.Promise = global.Promise;
 
